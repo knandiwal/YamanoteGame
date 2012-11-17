@@ -5,26 +5,25 @@ var rolnum = 0;
 //false Rotetion stop
 function diceview(dicenum){
 	switch(dicenum){
-	case 1:
-		document.diceImg.src = "img/dice/1.png";
-	break;
-	case 2:
-		document.diceImg.src = "img/dice/2.png";
-	break;
-	case 3:
-		document.diceImg.src = "img/dice/3.png";
-	break;
-	case 4:
-		document.diceImg.src = "img/dice/4.png";
-	break;
-	case 5:
-		document.diceImg.src = "img/dice/5.png";
-	break;
-	case 6:
-		document.diceImg.src = "img/dice/6.png";
-	break;
+	    case 1:
+            document.getElementById("diceImg").src = "img/dice/1.png";
+            break;
+        case 2:
+            document.getElementById("diceImg").src = "img/dice/2.png";
+            break;
+        case 3:
+            document.diceImg.src = "img/dice/3.png";
+            break;
+        case 4:
+            document.diceImg.src = "img/dice/4.png";
+            break;
+        case 5:
+            document.diceImg.src = "img/dice/5.png";
+            break;
+        case 6:
+            document.diceImg.src = "img/dice/6.png";
+            break;
 	}
-
 }
 
 function dice_submit(){
@@ -37,18 +36,20 @@ function dice_submit(){
 
 
 function dicerol(){
-	while(state==true){
-		if(rolnum<6){
+    while(state==true){
+        if(rolnum<6){
 			rolnum++;
 		}else {
 			rolnum = 1;
 		}
 		diceview(rolnum);
+        setTimeout(function(){}, 1000);
 	}
 }
 
 function diceOnClick(){
-	if(state==true){dice_submit();state=false;}
+    alert("onClick()");
+    if(state==true){dice_submit();state=false;}
 	else {
 		state=true;
 		dicerol();
