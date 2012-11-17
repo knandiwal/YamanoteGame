@@ -1,4 +1,5 @@
 ﻿var state = false;
+var rolnum = 0;
 //state 
 //true Rotation now
 //false Rotetion stop
@@ -26,6 +27,15 @@ function diceview(dicenum){
 
 }
 
+function dice_submit(){
+	var rando = 1;
+	rando = Math.floor( Math.random()*6+1 );
+	
+	diceview(rando);
+		
+}
+
+
 function dicerol(){
 	while(state==true){
 		if(rolnum<6){
@@ -44,12 +54,5 @@ function diceOnClick(){
 		dicerol();
 	}
 }
-var rolnum = 0;
 
-function dice_submit(){
-	var rando = 1;
-	rando = Math.floor( Math.random()*6+1 );
-	
-	diceview(rando);
-		
-}
+
