@@ -5,7 +5,7 @@
 function diceview(var dicenum){
 	switch(dicenum){
 	case 1:
-		document.diceImg.src = "dice1.png";
+		document.diceImg.src = "img/dice/1.png";
 	break;
 	case 2:
 		document.diceImg.src = "dice2.png";
