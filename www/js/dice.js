@@ -2,7 +2,7 @@
 //state 
 //true Rotation now
 //false Rotetion stop
-function diceview(var dicenum){
+function diceview(dicenum){
 	switch(dicenum){
 	case 1:
 		document.diceImg.src = "img/dice/1.png";
