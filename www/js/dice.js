@@ -8,19 +8,19 @@ function diceview(var dicenum){
 		document.diceImg.src = "img/dice/1.png";
 	break;
 	case 2:
-		document.diceImg.src = "dice2.png";
+		document.diceImg.src = "img/dice/2.png";
 	break;
 	case 3:
-		document.diceImg.src = "dice3.png";
+		document.diceImg.src = "img/dice/3.png";
 	break;
 	case 4:
-		document.diceImg.src = "dice4.png";
+		document.diceImg.src = "img/dice/4.png";
 	break;
 	case 5:
-		document.diceImg.src = "dice5.png";
+		document.diceImg.src = "img/dice/5.png";
 	break;
 	case 6:
-		document.diceImg.src = "dice6.png";
+		document.diceImg.src = "img/dice/6.png";
 	break;
 	}
 
