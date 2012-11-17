@@ -1,29 +1,21 @@
 ﻿var state = false;
 var rolnum = 0;
+var diceImgData = [];
+
+function onload()
+{
+    for(var i=1; i<=6; i++)
+    {
+        diceImgData[i] = new Image();
+        diceImgData[i].src = "img/dice/" + i + ".png";
+    }
+}
+
 //state 
 //true Rotation now
 //false Rotetion stop
 function diceview(dicenum){
-	switch(dicenum){
-	    case 1:
-            document.getElementById("diceImg").src = "img/dice/1.png";
-            break;
-        case 2:
-            document.getElementById("diceImg").src = "img/dice/2.png";
-            break;
-        case 3:
-            document.diceImg.src = "img/dice/3.png";
-            break;
-        case 4:
-            document.diceImg.src = "img/dice/4.png";
-            break;
-        case 5:
-            document.diceImg.src = "img/dice/5.png";
-            break;
-        case 6:
-            document.diceImg.src = "img/dice/6.png";
-            break;
-	}
+    document.diceImg.src = diceImgData[dicenum].src;
 }
 
 function dice_submit(){
@@ -36,19 +28,18 @@ function dice_submit(){
 
 
 function dicerol(){
-    while(state==true){
-        if(rolnum<6){
+    while(state){
+	    diceview(rolnum);
+        if(rolnum<7){
 			rolnum++;
 		}else {
 			rolnum = 1;
 		}
-		diceview(rolnum);
-        setTimeout(function(){}, 1000);
+        //setTimeout(dicerol(), 100);
 	}
 }
 
 function diceOnClick(){
-    alert("onClick()");
     if(state==true){dice_submit();state=false;}
 	else {
 		state=true;
