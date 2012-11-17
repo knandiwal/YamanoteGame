@@ -48,7 +48,7 @@ var rolnum = 0;
 
 function dice_submit(){
 	var rando = 1;
-	rando = 1+ Math.floor( Math.random() * 7 );
+	rando = Math.floor( Math.random()*6+1 );
 	
 	diceview(rando);
 		
