@@ -4,7 +4,7 @@ var diceImgData = [];
 function Sleep( T ){ 
    var d1 = new Date().getTime(); 
    var d2 = new Date().getTime(); 
-   while( d2 < d1+1*T ){    //T秒待つ 
+   while( d2 < d1+1*T ){    //T [ms]待つ 
        d2=new Date().getTime(); 
    } 
    return; 
@@ -40,28 +40,19 @@ function dicerol(){
     setTimeout(function callback(){
 	    diceview(rolnum);
 		Sleep( 50 );
-		//alert(rolnum);
         if(rolnum<6){
 			rolnum++;
-			//Sleep( 1 );//1秒待つ 
 		}else {
-			
 			rolnum = 1;
-			//Sleep( 1 );//1秒待つ 
 			
 		}
-		setTimeout(callback);
-        //setTimeout(dicerol(), 100);
-	}
-	)
+		if(state){setTimeout(callback);}
+	})
 }
 
 function diceOnClick(){
-    if(state==true){dice_submit();state=false;}
-	else {
-		state=true;
-		dicerol();
-	}
+    if(state==true){state=false;dice_submit();}
+	else {state=true;dicerol();}
 }
 
 
